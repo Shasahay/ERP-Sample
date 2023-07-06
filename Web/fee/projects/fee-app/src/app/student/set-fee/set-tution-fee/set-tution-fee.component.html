@@ -1,0 +1,38 @@
+<div class="row mt-3">
+
+<!--   <app-data-form></app-data-form>     -->
+
+<div class="month-filter-stl">
+<app-month-year-filter (checkboxValuesChange)="handleCheckboxValues($event)" (dropdownChange)="handleDropdownChange($event)"></app-month-year-filter>
+</div>
+<div class="mt-5 mx-5">
+    <mat-form-field class="mx-2" >
+      <mat-label>Tution Fee</mat-label>
+      <input matInput [value]="tutionFee" readonly>
+    </mat-form-field>
+
+       <mat-form-field class="mx-2">
+        <mat-label>Discount Type</mat-label>
+        <mat-select [(value)]= "selDiscountType">
+          <mat-option *ngFor="let discount of discountType" [value]="discount">{{ discount }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+     
+      <mat-form-field class="mx-2">
+        <mat-label>Discount Unit</mat-label>
+        <mat-select [(value)]= "selDiscountUnit">
+          <mat-option *ngFor="let unit of discountUnit" [value]="unit">{{ unit }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="mx-2" >
+        <mat-label>Discount Amount</mat-label>
+        <input matInput [(ngModel)]="discountAmount" (mouseout)="computeTutionFee(selDiscountUnit)">
+      </mat-form-field>
+
+      <mat-form-field class="mx-2" >
+        <mat-label>Computed Tution Fee</mat-label>
+        <input matInput [value]="computedTutionFee" readonly>
+      </mat-form-field>
+    </div>
+</div>

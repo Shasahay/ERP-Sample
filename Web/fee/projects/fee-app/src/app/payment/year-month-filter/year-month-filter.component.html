@@ -1,0 +1,16 @@
+<mat-form-field class="pt-4 px-4">
+    <mat-label>Year</mat-label>
+    <mat-select [(ngModel)]="dropdownValue" (ngModelChange)="emitDropdownChange()">
+        <mat-option *ngFor="let option of options" [value]="option">{{ option }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<div class="checkbox-container">
+<div *ngFor="let option of checkboxOptions">
+    <mat-checkbox [(ngModel)]="option.checked" (ngModelChange)="emitCheckboxValuesChange(option)">
+      {{ option.label }}
+    </mat-checkbox>
+  </div>
+</div>
+  
+  

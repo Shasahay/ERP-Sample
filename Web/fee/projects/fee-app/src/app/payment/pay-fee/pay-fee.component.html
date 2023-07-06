@@ -1,0 +1,63 @@
+<div class="    ">
+<div class="yr-mn-filter-stl">
+    <app-year-month-filter [dropdownValue] ="currentYear"  (checkboxValuesChange)="handleCheckboxValues($event)" (dropdownChange)="handleDropdownChange($event)"></app-year-month-filter>
+    </div>
+
+<div  class="mt-5 mx-5">
+    <mat-form-field class="mx-2 w-50" >
+        <mat-label>Pending Tution Fee</mat-label>
+        <input matInput [ngModel]="tutionFee">
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="otherFeePay">Pay other Pending Fee</mat-checkbox>
+
+  
+</div>
+
+<div *ngIf="otherFeePay" class="mx-5">
+    <mat-form-field class="mx-2" >
+        <mat-label>Pending TransportFee Fee</mat-label>
+        <input matInput [ngModel]="transportFee">
+      </mat-form-field>
+
+    <mat-form-field class="mx-2" >
+        <mat-label>Pending Session Fee</mat-label>
+        <input matInput [ngModel]="sessionFee">
+      </mat-form-field>
+
+      <mat-form-field class="mx-2" >
+        <mat-label>Pending Admission Fee</mat-label>
+        <input matInput [ngModel]="admissionFee">
+      </mat-form-field>
+
+      <mat-form-field class="mx-2" >
+        <mat-label>Pending study Material Fee</mat-label>
+        <input matInput [ngModel]="studymaterialFee">
+      </mat-form-field>
+      <mat-form-field class="mx-2" >
+        <mat-label>Pending Attire Fee</mat-label>
+        <input matInput [ngModel]="attireFee">
+      </mat-form-field>
+</div>
+
+<div class="mx-4">
+
+    <mat-form-field class="pt-4 px-4 w-50">
+        <mat-label>Payment Type</mat-label>
+        <mat-select [(ngModel)]="selectedPT" (selectionChange)="onSelectionChange($event)">
+            <mat-option *ngFor="let pt of paymentTypeDS" [value]="pt.value">{{ pt.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+</div>
+
+<div class="mx-5">
+    <mat-form-field class="w-50">
+        <mat-label>Comments</mat-label>
+        <textarea matInput [(ngModel)]="comment"></textarea>
+      </mat-form-field> 
+      
+</div>
+    
+
+</div>

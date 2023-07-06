@@ -1,0 +1,62 @@
+.set-fee-container {
+    // height: 100%;
+    // width: 100%;
+    overflow: auto;
+  }
+  
+  table {
+   // width: 100%;
+  }
+  
+  // td.mat-column-star {
+  //   width: 20px;
+  //   padding-right: 8px;
+  // }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+    
+  }
+  
+  .mat-table-sticky:first-child {
+    //border-right: 1px solid #e0e0e0;
+  }
+
+  
+  
+  .mat-table-sticky:last-child {
+    //border-left: 1px solid #e0e0e0;
+  }
+  
+
+  .tbl-scrol-container{
+    margin-top: 6% !important;
+    width: 100% !important;
+  }
+  .mat-mdc-header-cell{
+    color: #f5F5F5;
+  }
+
+  .mat-mdc-row:hover{
+    background-color:#D6E1F4 !important;
+    color: #f5f5f5 !important;
+  }
+
+  // .sticky-col-color{
+  //   background-color: #b6142c !important;
+  // }
+
+ 
+  .mat-column-actions {
+    text-align: center;
+  }
+  .setfee-menu-stl{
+    background-color: #b6142c;    
+  }
+.mat-mdc-table-sticky{
+  //background-color:#b6142c !important ;
+ // color: #f5F5F5;
+}
+  .white-color{
+    color: #f5f5f5;
+  }

@@ -1,0 +1,32 @@
+.slide-enter {
+    transform: translateX(100%);
+  }
+  
+  .slide-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+  }
+  
+  .slide-leave {
+    transform: translateX(0);
+  }
+  
+  .slide-leave-active {
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+  }
+  
+
+  .std-info-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    //grid-gap: 2px; /* Optional: Adjust spacing between options */
+    //padding-bottom: 10px;
+  }
+  
+  .hr{
+    margin-top: -1.2rem;
+    //margin-bottom: 0.5rem;
+    border: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }

@@ -1,0 +1,21 @@
+<div class="std-info-container">
+<div><h2 mat-dialog-title class="text-dark ">{{data.studentId}} &nbsp; | &nbsp; 
+  {{data.firstName}} {{data.lastName}} &nbsp; | &nbsp;
+  {{data.class}} &nbsp; | &nbsp;
+  <!-- {{data.rollNumner}}  -->
+  8
+  </h2>
+  <div class="hr mt-n6 w-50 mx-4 mb-1"></div>
+</div>
+  <div class="mx-4">
+    <h4  class=" mx-4 mt-n3 text-secondary">{{data.fatherName}} </h4>   
+  </div>
+</div>
+
+<div class="m-4">
+<app-pay-fee [payment] = "payment"></app-pay-fee>
+</div>
+<div mat-dialog-actions class="right m-4" style="float: right;">
+  <button mat-stroked-button color="primary" [mat-dialog-close]="'Submit'">submit</button>
+    <button mat-stroked-button color="primary" [mat-dialog-close]="'close'">Close</button>
+  </div>

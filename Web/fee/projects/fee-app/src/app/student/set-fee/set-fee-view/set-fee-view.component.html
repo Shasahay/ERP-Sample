@@ -1,0 +1,247 @@
+<div class="float-right" style="float: right;">
+    <app-student-search [options]="dropdownOptions" [selectedOption]="selectedDropdownOption" (optionChanged)="handleOptionChange($event)"></app-student-search>
+    </div>
+
+    <div class="row mt-4 tbl-scrol-container">
+    <!-- <div class="example-container mat-elevation-z8 mt-4"> -->
+        <div class="set-fee-container mt-4">
+        <table mat-table [dataSource]="studentSetFee" class="mt-4">
+
+            <ng-container matColumnDef="actions" sticky>
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Actions">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" class="setfee-menu-stl">
+                    <button mat-menu-item (click)="openDialog(element)">
+                      <mat-icon style="color: #f5f5f5;">edit</mat-icon>
+                      <span class="white-color">Edit</span>
+                    </button>
+
+                    <!-- Removing add might need in future -->
+                    
+                    <!-- <button mat-menu-item (click)="openDialog(element)">
+                      <mat-icon style="color: #f5f5f5;">add</mat-icon>
+                      <span class="white-color">Add</span>
+                    </button> -->
+                    <button mat-menu-item (click)="delete(element)">
+                      <mat-icon style="color:#F5f5f5;">delete</mat-icon>
+                      <span class="white-color">Delete</span>
+                    </button>
+                  </mat-menu>
+                </td>
+              </ng-container>
+
+      
+ 
+          <!-- Name Column -->
+          <ng-container matColumnDef="studentId" sticky>
+            <th mat-header-cell *matHeaderCellDef> student Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.studentId}} </td>
+          </ng-container>
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="firstName" sticky>
+            <th mat-header-cell *matHeaderCellDef> First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="lastName" sticky>
+            <th mat-header-cell *matHeaderCellDef> Last Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="fatherName" sticky>
+            <th mat-header-cell *matHeaderCellDef> Father Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.fatherName}} </td>
+          </ng-container>
+      
+            <!-- Name Column -->
+            <ng-container matColumnDef="class" sticky>
+                <th mat-header-cell *matHeaderCellDef> Class </th>
+                <td mat-cell *matCellDef="let element"> {{element.class}} </td>
+            </ng-container>
+
+  <!-- Fee type Column -->
+                            <ng-container matColumnDef="tutionFee">
+                                <th mat-header-cell *matHeaderCellDef> Tution Fee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.tutionFee}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="tutionFeeDiscountType">
+                                <th mat-header-cell *matHeaderCellDef> TutionFee DiscountType </th>
+                                <td mat-cell *matCellDef="let element"> {{element.tutionFeeDiscountType}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="tutionFeeDiscount">
+                                <th mat-header-cell *matHeaderCellDef> TutionFee Discount </th>
+                                <td mat-cell *matCellDef="let element"> {{element.tutionFeeDiscount}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="computedTutionFee" sticky>
+                                <th mat-header-cell *matHeaderCellDef> Computed TutionFee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.computedTutionFee}} </td>
+                            </ng-container>
+
+ <!-- Fee type Column -->
+                             <ng-container matColumnDef="transportFee">
+                                <th mat-header-cell *matHeaderCellDef> TransportFee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.transportFee}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="transportFeeDiscountType">
+                                <th mat-header-cell *matHeaderCellDef> TransportFee DiscountType </th>
+                                <td mat-cell *matCellDef="let element"> {{element.transportFeeDiscountType}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="transportFeeDiscount">
+                                <th mat-header-cell *matHeaderCellDef> TransportFee Discount </th>
+                                <td mat-cell *matCellDef="let element"> {{element.transportFeeDiscount}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="computedTransportFee" sticky>
+                                <th mat-header-cell *matHeaderCellDef> Computed TransportFee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.computedTransportFee}} </td>
+                            </ng-container>
+
+
+
+ <!-- Fee type Column -->
+                    <ng-container matColumnDef="sessionFee">
+                        <th mat-header-cell *matHeaderCellDef> Session Fee </th>
+                        <td mat-cell *matCellDef="let element"> {{element.sessionFee}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="sessionFeeDiscountType">
+                        <th mat-header-cell *matHeaderCellDef> SessionFee DiscountType </th>
+                        <td mat-cell *matCellDef="let element"> {{element.sessionFeeDiscountType}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="sessionFeeDiscount">
+                        <th mat-header-cell *matHeaderCellDef> SessionFee Discount </th>
+                        <td mat-cell *matCellDef="let element"> {{element.sessionFeeDiscount}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="computedSessionFee" sticky>
+                        <th mat-header-cell *matHeaderCellDef> Computed SessionFee </th>
+                        <td mat-cell *matCellDef="let element"> {{element.computedSessionFee}} </td>
+                    </ng-container>
+
+
+ <!-- Fee type Column -->
+                            <ng-container matColumnDef="admissionFee">
+                                <th mat-header-cell *matHeaderCellDef> AdmissionFee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.admissionFee}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="admissionFeeDiscountType">
+                                <th mat-header-cell *matHeaderCellDef> AdmissionFee DiscountType </th>
+                                <td mat-cell *matCellDef="let element"> {{element.admissionFeeDiscountType}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="admissionFeeDiscount">
+                                <th mat-header-cell *matHeaderCellDef> AdmissionFee Discount </th>
+                                <td mat-cell *matCellDef="let element"> {{element.admissionFeeDiscount}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="computedAdmissionFee" sticky>
+                                <th mat-header-cell *matHeaderCellDef> Computed AdmissionFee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.computedAdmissionFee}} </td>
+                            </ng-container>
+
+
+<!-- Fee type Column -->
+                             <ng-container matColumnDef="attirefee">
+                                <th mat-header-cell *matHeaderCellDef> Attire fee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.attirefee}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="attireFeeDiscountType">
+                                <th mat-header-cell *matHeaderCellDef> AttireFee DiscountType </th>
+                                <td mat-cell *matCellDef="let element"> {{element.attireFeeDiscountType}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="attireFeeDiscount">
+                                <th mat-header-cell *matHeaderCellDef> AttireFee Discount </th>
+                                <td mat-cell *matCellDef="let element"> {{element.attireFeeDiscount}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="computedAttireFee" sticky>
+                                <th mat-header-cell *matHeaderCellDef> Computed AttireFee </th>
+                                <td mat-cell *matCellDef="let element"> {{element.computedAttireFee}} </td>
+                            </ng-container>
+
+ <!-- Fee type Column -->
+                                <ng-container matColumnDef="studyMaterialFee">
+                                    <th mat-header-cell *matHeaderCellDef> StudyMaterial Fee </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.studyMaterialFee}} </td>
+                                </ng-container>
+
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="studyMaterialFeeDiscountType">
+                                    <th mat-header-cell *matHeaderCellDef> StudyMaterialFee DiscountType </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.studyMaterialFeeDiscountType}} </td>
+                                </ng-container>
+
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="studyMaterialFeeDiscount">
+                                    <th mat-header-cell *matHeaderCellDef> StudyMaterialFee Discount </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.studyMaterialFeeDiscount}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="computedStudyMaterialFee" sticky>
+                                    <th mat-header-cell *matHeaderCellDef> Computed StudyMaterialFee </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.computedStudyMaterialFee}} </td>
+                                </ng-container>
+
+
+
+ <!-- Fee type Column -->
+                                 <ng-container matColumnDef="miscellaneousFee">
+                                    <th mat-header-cell *matHeaderCellDef> Miscellaneous Fee </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.miscellaneousFee}} </td>
+                                </ng-container>
+
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="miscellaneousFeeDiscountType">
+                                    <th mat-header-cell *matHeaderCellDef> MiscellaneousFee DiscountType </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.miscellaneousFeeDiscountType}} </td>
+                                </ng-container>
+
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="miscellaneousFeeDiscount">
+                                    <th mat-header-cell *matHeaderCellDef> MiscellaneousFee Discount </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.miscellaneousFeeDiscount}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="computedMiscellaneousFee" sticky>
+                                    <th mat-header-cell *matHeaderCellDef> Computed MiscellaneousFee </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.computedMiscellaneousFee}} </td>
+                                </ng-container>
+
+          <!-- Star Column -->
+          <!-- <ng-container matColumnDef="star" stickyEnd>
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <mat-icon>more_vert</mat-icon>
+            </td>
+          </ng-container> -->
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="sd-bg-style"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>

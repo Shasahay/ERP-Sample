@@ -1,0 +1,27 @@
+<!-- <h2 mat-dialog-title>User Details</h2>
+<div mat-dialog-content>
+  <p><strong>Name:</strong> {{ studentId }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="'close'">Close</button>
+</div> -->
+
+
+<h2 mat-dialog-title>{{data.firstName}} {{data.lastName}} </h2>
+<p class="px-4" style="margin-top: -1rem;"> <span class="px-4"> {{data.fatherName}} | {{data.class}} </span></p>
+<!-- <div mat-dialog-content class="row" style="margin-top: -1.5rem;">
+    <div class="col">
+        <p><strong>Father:</strong> {{data.fatherName}}</p> <br/>
+    </div>
+    <div class="col">
+        <p><strong>class:</strong> {{data.class}}</p>
+    </div> -->
+    
+    
+<!-- </div> -->
+
+<app-detailview></app-detailview>
+
+<div mat-dialog-actions class="right m-4" style="float: right;">
+    <button mat-stroked-button color="primary" [mat-dialog-close]="'close'">Close</button>
+  </div>

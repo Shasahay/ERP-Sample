@@ -1,0 +1,78 @@
+<div class="float-right" style="float: right;">
+<app-student-search [options]="dropdownOptions" [selectedOption]="selectedDropdownOption" (optionChanged)="handleOptionChange($event)"></app-student-search>
+</div>
+
+
+<div class="detail-container mt-4">
+<table mat-table [dataSource]="studentFeeOverView">
+
+    <!-- Column definitions -->
+    <ng-container matColumnDef="Student Id">
+      <th mat-header-cell *matHeaderCellDef>Student Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.studentId }}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="First Name">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Last Name">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Father Name">
+        <th mat-header-cell *matHeaderCellDef>Father Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.fatherName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Class">
+        <th mat-header-cell *matHeaderCellDef>Class</th>
+        <td mat-cell *matCellDef="let element">{{ element.class }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Tution Fee">
+        <th mat-header-cell *matHeaderCellDef>Tution Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.tutionFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Computed Tution Fee">
+        <th mat-header-cell *matHeaderCellDef>Computed Tution Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.computedTutionFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Total Fee">
+        <th mat-header-cell *matHeaderCellDef>Total Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.totalFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Total Computed Fee">
+        <th mat-header-cell *matHeaderCellDef>Total Computed Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.totalComputedFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Last Paid Fee">
+        <th mat-header-cell *matHeaderCellDef>Last Paid Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.lastPaidFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Last Fee Paid DateTime">
+        <th mat-header-cell *matHeaderCellDef>Last Fee Paid DateTime</th>
+        <td mat-cell *matCellDef="let element">{{ element.lastFeePaidDatatime }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Total Paid Fee">
+        <th mat-header-cell *matHeaderCellDef>Total Paid Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.totalpaidFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Total Dues">
+        <th mat-header-cell *matHeaderCellDef>Total Dues</th>
+        <td mat-cell *matCellDef="let element">{{ element.totalDues }}</td>
+      </ng-container>
+    
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="openDialog(element)">
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <!-- Table rows -->
+    <tr mat-header-row *matHeaderRowDef="feeOverViewColumn; sticky: true" class="sd-bg-style"></tr>
+    <tr mat-row *matRowDef="let row; columns: feeOverViewColumn;"></tr>
+  </table>
+</div>

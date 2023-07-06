@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{data.firstName}} {{data.lastName}} </h2>
+<p class="px-4" style="margin-top: -1rem;"> <span class="px-4"> {{data.fatherName}} | {{data.class}} </span></p>
+<app-set-fee-dailog-view [feeDetail] = "feeDetail"></app-set-fee-dailog-view>
+
+<div mat-dialog-actions class="right m-4" style="float: right;">
+    <button mat-stroked-button color="primary" [mat-dialog-close]="'close'">submit</button>
+    <button mat-stroked-button color="primary" [mat-dialog-close]="'close'">cancel</button>
+  </div>

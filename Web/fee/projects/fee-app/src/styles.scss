@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.sd-bg-style{
+    background-color:#233349 !important;
+    color: #f5f5f5 !important;
+  }
+
+  .bg-white{
+    background-color: #f5f5f5;
+}
+.hd-bg-style{
+    background-color: #b6142c !important;
+    color: #f5f5f5;
+  }

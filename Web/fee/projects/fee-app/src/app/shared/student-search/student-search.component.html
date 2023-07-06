@@ -1,0 +1,17 @@
+<mat-form-field appearance="fill">
+    <mat-label>Search Something</mat-label>
+    <input type="text" matInput placeholder="Type something.." [(ngModel)]="searchTerm">
+    <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+
+<mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange($event)">
+      <mat-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary" (click)="search()">Search</button>
+  
+    

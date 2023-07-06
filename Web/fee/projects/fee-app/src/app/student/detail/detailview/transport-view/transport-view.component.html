@@ -1,0 +1,33 @@
+<table mat-table [dataSource]="dsStuTransFee" class="mt-4">
+    <!-- Column definitions -->
+    <ng-container matColumnDef="Month">
+      <th mat-header-cell *matHeaderCellDef>Month</th>
+      <td mat-cell *matCellDef="let element">{{ element.Month }}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Transport Fee">
+      <th mat-header-cell *matHeaderCellDef>Transport Fee</th>
+      <td mat-cell *matCellDef="let element" class="tbl-cell-color">{{ element.TransportFee }}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Computed Transport Fee">
+        <th mat-header-cell *matHeaderCellDef>Computed Transport Fee</th>
+        <td mat-cell *matCellDef="let element">{{ element.ComputedTransportFee }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Amount Paid">
+        <th mat-header-cell *matHeaderCellDef>Amount Paid</th>
+        <td mat-cell *matCellDef="let element">{{ element.AmountPaid }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Paid Date Time">
+        <th mat-header-cell *matHeaderCellDef>Paid Date Time</th>
+        <td mat-cell *matCellDef="let element">{{ element.PaidDateTime }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Dues Amount">
+        <th mat-header-cell *matHeaderCellDef>Dues Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.DuesAmount }}</td>
+      </ng-container>
+  
+    <!-- Table rows -->
+    <tr mat-header-row *matHeaderRowDef="trasFeeTblColumn; sticky: true"  class="sd-bg-style"></tr>
+    <tr mat-row *matRowDef="let row; columns: trasFeeTblColumn;"></tr>
+  </table>

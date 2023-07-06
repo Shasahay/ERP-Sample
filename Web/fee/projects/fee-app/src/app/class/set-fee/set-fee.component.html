@@ -1,0 +1,69 @@
+<div class="class-fee-container">
+<table mat-table [dataSource]="classFee" class="">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="class">
+      <th mat-header-cell *matHeaderCellDef> Class </th>
+      <td mat-cell *matCellDef="let element"> {{element.class}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="tutionFee">
+      <th mat-header-cell *matHeaderCellDef> Tution Fee </th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="element !== selectedRow; else editCell">
+          {{ element.tutionFee }}
+        </ng-container>
+        <ng-template #editCell>
+          <input matInput [(ngModel)]="element.tutionFee" (keyup.enter)="saveRow(element)" (keyup.escape)="cancelEdit()">
+        </ng-template>
+      </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="studymaterialFee">
+      <th mat-header-cell *matHeaderCellDef> Study Material Fee </th>
+      <!-- <td mat-cell *matCellDef="let element"> {{element.studymaterialFee}} </td> -->
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="element !== selectedRow; else editCell">
+          {{ element.studymaterialFee }}
+        </ng-container>
+        <ng-template #editCell>
+          <input matInput type="number" [(ngModel)]="element.studymaterialFee" (keyup.enter)="saveRow(element)" (keyup.escape)="cancelEdit()">
+        </ng-template>
+      </td>
+    </ng-container>
+  
+   
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="element !== selectedRow; else editActions">
+          <button  mat-icon-button (click)="editRow(element)"  [disabled]="!isAllowedToEdit()">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </ng-container>
+        <ng-template #editActions>
+          <button mat-icon-button (click)="saveRow(element)">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button mat-icon-button (click)="cancelEdit()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-template>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="sd-bg-style"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+
+
+
+</div>

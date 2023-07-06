@@ -1,0 +1,47 @@
+#mySidenav a {
+    position: absolute; /* Position them relative to the browser window */
+    left: -170px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 210px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    
+}
+  
+  #mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+  }
+  
+  /* The about link: 20px from the top with a green background */
+  #about {
+    top: 4.3rem;
+    background-color: #04AA6D;
+  }
+  
+  #blog {
+    top: 9.3rem;
+    background-color: #2196F3; /* Blue */
+  }
+  
+  #projects {
+    top: 14.3rem;
+    background-color: #f44336; /* Red */
+  }
+  
+  #contact {
+    top: 19.3rem;
+    background-color: #FEDE00 /* yellow */
+  }
+  #report {
+    top: 24.3rem;
+    background-color: #8F00FF /* yellow */
+  }
+  .ver-dim-stl{
+      position: fixed;
+      height: 70%;
+      width: 4%;
+      top: 22%
+  }

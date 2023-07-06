@@ -1,0 +1,56 @@
+    <div class="filter-container"  [ngClass]="{ 'expanded': isExpanded }">
+        <button mat-icon-button (click)="toggleFilter()">
+          <mat-icon>filter_list</mat-icon>
+            <!-- <mat-icon>{{ isExpanded ? 'chevron_left' : 'chevron_right' }} </mat-icon> -->
+            
+          </button>
+<div class="ml-4 px-3 filter-box"  style="margin-left: 30px;">
+  <div class="filter-box-stl">
+            <mat-label class="">Filter by class</mat-label> <br />
+            <mat-select class="form-control mt-3" [(ngModel)]="classValue" (ngModelChange)="emitClassDDChange()" multiple>
+                <mat-option  *ngFor="let class of classes" [value]="class">{{ class }}</mat-option>
+            </mat-select>
+          
+          </div>
+          <div class="mt-4 filter-box-stl">
+          <mat-label class=>Filter by student Id</mat-label>
+          <input class="form-control mt-3" matInput placeholder="Enter student Id" [(ngModel)]="filter.namecriteria">
+        </div>
+      
+
+        <div class="mt-4 filter-box-stl" >
+          <mat-label>Filter by Fee Type</mat-label>
+          <mat-select class="form-control mt-3" [(ngModel)]="feeValue" (ngModelChange)="emitClassFTChange()" multiple>
+              <mat-option  *ngFor="let feeType of feeTypes" [value]="feeType">{{ feeType }}</mat-option>
+          </mat-select>
+          <mat-checkbox class="mt-3" [(ngModel)]="isFeePending"  (ngModelChange)="handleFeePendingCCChange($event)">Pending</mat-checkbox>
+          <mat-checkbox class="mt-3" [(ngModel)]="isFeePaid"  (ngModelChange)="handleFeePaidCCChange($event)">Paid</mat-checkbox>
+        </div>
+
+        <div class="mt-4 float-end" >
+          <button mat-stroked-button color="primary">Apply</button> &nbsp; &nbsp;
+          <button mat-stroked-button color="primary">Clear</button>
+        </div>
+
+
+
+
+
+      
+        <!-- <mat-form-field>
+          <mat-label>Filter by Name</mat-label>
+          <input matInput placeholder="Enter name" [(ngModel)]="filter.namecriteria">
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>Filter by Category</mat-label>
+          <input matInput placeholder="Enter category" [(ngModel)]="filter.categorycriteria">
+        </mat-form-field> -->
+      
+        <!-- Add more filter components as needed -->
+
+      </div>
+      </div>
+      
+
+      

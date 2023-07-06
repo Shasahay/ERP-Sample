@@ -1,0 +1,25 @@
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Search Something</mat-label>
+    <input type="text" matInput placeholder="Type something..">
+    <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+<!-- <mat-form-field>
+    <input matInput placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="filterItems()">
+    <mat-icon>search</mat-icon>
+  </mat-form-field> -->
+  
+  <mat-form-field>
+    <mat-label>Items</mat-label>
+    <select>
+      <option *ngFor="let option of options" [value]="options"></option>
+    </select>
+    
+    <!-- {{ option.label }} -->
+
+  </mat-form-field>
+  
+
+  

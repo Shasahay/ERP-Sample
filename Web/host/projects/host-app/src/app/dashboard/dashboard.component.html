@@ -1,0 +1,31 @@
+<div class="container">
+<mat-expansion-panel class="expension-h-stl" [expanded]="true" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b> Quick Access </b>
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <app-tile [tileItems] = "tilesQuickAction" class="pt-4"></app-tile>
+  </mat-expansion-panel>
+
+<!-- End of Quick Action Pannel -->
+<!-- Start of Accunts section Panel -->
+
+<mat-expansion-panel [expanded]="true" class="expension-h-stl">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b> Accounts </b>
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <app-tile [tileItems] = "tilesAccount" class="pt-4"></app-tile>
+  </mat-expansion-panel>
+
+ 
+    
+</div>

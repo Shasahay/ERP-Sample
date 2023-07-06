@@ -1,0 +1,10 @@
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px; /* Optional: Adjust spacing between options */
+    padding-bottom: 10px;
+  }
+  
+  .checkbox-container mat-checkbox {
+    margin-right: 15px; /* Optional: Adjust spacing between checkboxes */
+  }

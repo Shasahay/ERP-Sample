@@ -1,0 +1,33 @@
+
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step label="Set Tution Fee">
+     <app-set-tution-fee [tutionFeeModel] = "tutionFeeDetail"></app-set-tution-fee>
+    </mat-step>
+    <mat-step  label="Set Transport Fee">
+        <!-- <app-transport-view></app-transport-view> -->
+      </mat-step>
+    <mat-step label=" Set Admission and Session">
+      <div class="row mt-4">
+      <div class="col">
+        <!-- <app-session-view></app-session-view> -->
+      </div>
+      <div class="col">
+        <!-- <app-admission-view></app-admission-view> -->
+      </div>
+      </div>
+      
+    </mat-step>
+      <mat-step  label="Set Miscellaneous">
+             <!-- <app-miscellaneous-view></app-miscellaneous-view> -->
+   
+      </mat-step>
+    <!-- <mat-step>
+        
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button  class="btn gr right" mat-button matStepperPrevious>Back</button> &nbsp;&nbsp;
+        <button class="btn gr" mat-button (click)="stepper.reset()">Reset</button>&nbsp;&nbsp;
+        </div>
+    </mat-step> -->
+  </mat-stepper>
